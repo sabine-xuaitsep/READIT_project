@@ -1,6 +1,5 @@
 <?php 
-
-// VARIABLES dispos:
+// Available VARIABLES:
   // - $posts: ARRAY(ARRAY(id, title, created_at, resume, image, content, author_id, categorie_id))
 ?>
 
@@ -16,11 +15,14 @@
           <div class="text p-4 float-right d-block">
             <div class="topper d-flex align-items-center">
               <div class="one py-2 pl-3 pr-1 align-self-stretch">
-                <span class="day">18</span>
+                <span class="day">
+                  <?php echo date_formater($post['created_at'], 'd'); ?>
+                </span>
+                
               </div>
               <div class="two pl-0 pr-3 py-2 align-self-stretch">
-                <span class="yr">2019</span>
-                <span class="mos">October</span>
+                <span class="yr"><?php echo date_formater($post['created_at'], 'Y'); ?></span>
+                <span class="mos"><?php echo date_formater($post['created_at'], 'F'); ?></span>
               </div>
             </div>
             <h3 class="heading mb-3"><a href="#"><?php echo $post['title']; ?></a></h3>
