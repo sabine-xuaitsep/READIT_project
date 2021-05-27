@@ -18,7 +18,9 @@ function showAction (PDO $conn, int $id) {
   $post = findOneById($conn, $id);
   include_once '../app/models/tagsModel.php';
   $tags = findAllTagsByPostId($conn, $id);
-  
+  include_once '../app/models/authorModel.php';
+  $author = findOneAuthorByPostId($conn, $id);
+
   GLOBAL $content;
   ob_start();
     include '../app/views/posts/show.php';

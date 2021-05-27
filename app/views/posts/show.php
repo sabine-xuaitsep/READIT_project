@@ -5,6 +5,7 @@
   Available VARIABLES:
     - $post ARRAY(id, title, created_at, resume, image, content, author_id, categorie_id)
     - $tags ARRAY(id, name)
+    - $author ARRAY(id, lastname, firstname, biography, image)
 */
 
 ?>
@@ -25,11 +26,11 @@
 
 <div class="about-author d-flex p-4 bg-light">
   <div class="bio mr-5">
-    <img src="assets/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
+    <img src="assets/images/<?php echo $author['image']; ?>" alt="Image placeholder" class="img-fluid mb-4">
   </div>
   <div class="desc">
-    <h3>George Washington</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+    <h3><?php echo $author['firstname'] . ' ' . $author['lastname']; ?></h3>
+    <p><?php echo $author['biography']; ?></p>
   </div>
 </div>
 
