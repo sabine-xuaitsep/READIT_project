@@ -16,7 +16,9 @@ function indexAction (PDO $conn) {
 function showAction (PDO $conn, int $id) {
   include_once '../app/models/postsModel.php';
   $post = findOneById($conn, $id);
-
+  include_once '../app/models/tagsModel.php';
+  $tags = findAllTagsByPostId($conn, $id);
+  
   GLOBAL $content;
   ob_start();
     include '../app/views/posts/show.php';

@@ -4,6 +4,7 @@
 
   Available VARIABLES:
     - $post ARRAY(id, title, created_at, resume, image, content, author_id, categorie_id)
+    - $tags ARRAY(id, name)
 */
 
 ?>
@@ -16,16 +17,15 @@
 <p><?php echo $post['content']; ?></p>
 <div class="tag-widget post-tag-container mb-5 mt-5">
   <div class="tagcloud">
-    <a href="#" class="tag-cloud-link">Life</a>
-    <a href="#" class="tag-cloud-link">Sport</a>
-    <a href="#" class="tag-cloud-link">Tech</a>
-    <a href="#" class="tag-cloud-link">Travel</a>
+  <?php foreach($tags as $tag): ?>
+      <a href="#" class="tag-cloud-link"><?php echo $tag['name']; ?></a>
+    <?php endforeach; ?>
   </div>
 </div>
 
 <div class="about-author d-flex p-4 bg-light">
   <div class="bio mr-5">
-    <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
+    <img src="assets/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
   </div>
   <div class="desc">
     <h3>George Washington</h3>

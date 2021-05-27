@@ -37,8 +37,26 @@ ASTUCES :
               Aller chercher les tags du post en faisant appel à la fonction indexByPostId(id du post) du modèle des tags
               Faire un foreach pour afficher les tags dans la vue show du post
               ou faire un include de la vue indexByPostId des tags dans la vue show du post
+
+                postController
+                  showAction
+                    $post = postsModel / findOneById()
+                    $tags = tagsModel / findAllByPostId()
+                    charge posts/show
+
       - SOIT: Dans la vue show du post, faire appel à l'action indexByPostId du CTRL tagsControleur
               qui charge directement la vue indexByPostId
+
+                postController
+                  showAction
+                    $post = postsModel / findOneById()
+                    $tags = tagsModel / findAllByPostId()
+                    charge posts/show
+                  posts/show
+                    afficher post
+                    include tagController
+                    indexByPostId()
+
      > Faire un commit
   7. Détails de l'auteur: 2 solutions
       - SOIT: Dans l'action show du CTRL postsControleur,
