@@ -25,7 +25,7 @@
         <h3><?php echo $comment['pseudo']; ?></h3>
         <div class="meta mb-3">
         <?php 
-            echo date_formater($comment['created_at'], 'F d, Y \a\t g:iA'); 
+            echo \Core\Functions\date_formater($comment['created_at'], 'F d, Y \a\t g:ia'); 
         ?>
         </div>
         <p><?php echo $comment['content']; ?></p>
