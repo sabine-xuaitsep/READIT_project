@@ -9,7 +9,7 @@ if (isset($_GET['postID'])):
   // CTRL: postsControleur
   // ACTION: show
   include_once '../app/controllers/postsController.php';
-  showAction($conn, $_GET['postID']);
+  \App\Controllers\PostsController\showAction($conn, $_GET['postID']);
 
 else:
   // ROUTE PAR DEFAUT : LISTE DES  DERNIERS POSTS
@@ -17,6 +17,6 @@ else:
   // CTRL: postsController
   // ACTION: index
   include_once '../app/controllers/postsController.php';
-  indexAction($conn);
+  \App\Controllers\PostsController\indexAction($conn);
 
 endif;

@@ -4,7 +4,7 @@
 
   Available VARIABLES:
     - $post ARRAY(id, title, created_at, resume, image, content, author_id, categorie_id)
-    - $tags ARRAY(id, name)
+    - $tags ARRAY(ARRAY(id, name))
     - $author ARRAY(id, lastname, firstname, biography, image)
 */
 

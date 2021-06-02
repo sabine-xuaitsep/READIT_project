@@ -3,6 +3,8 @@
   ./app/models/authorModel.php
 */
 
+namespace App\Models\AuthorsModel;
+
 /**
  * Author by post ID
  *
@@ -10,14 +12,14 @@
  * @param integer $id
  * @return array
  */
-function findOneAuthorByPostId(PDO $conn, int $id) :array {
+function findOneByPostId(\PDO $conn, int $id) :array {
   $sql = 'SELECT a.id, a.lastname, a.firstname, a.biography, a.image
           FROM authors a
           JOIN posts p ON p.author_id = a.id
           WHERE p.id = :id;';
   
   $rs = $conn->prepare($sql);
-  $rs->bindValue(':id', $id, PDO::PARAM_INT);
+  $rs->bindValue(':id', $id, \PDO::PARAM_INT);
   $rs->execute();
-  return $rs->fetch(PDO::FETCH_ASSOC);
+  return $rs->fetch(\PDO::FETCH_ASSOC);
 }
