@@ -41,7 +41,7 @@ function showAction (\PDO $conn, int $id) {
   $tags = \App\Models\TagsModel\findAllByPostId($conn, $id);
   // asking author by post id to authorsModel
   include_once '../app/models/authorsModel.php';
-  $author = \App\Models\AuthorsModel\findOneByPostId($conn, $id);
+  $author = \App\Models\AuthorsModel\findOneById($conn, $post['author_id']);
 
   // load posts/show view in $content, $post['title] in $title
   GLOBAL $content, $title;

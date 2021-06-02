@@ -7,7 +7,6 @@
     - $tags ARRAY(ARRAY(id, name))
     - $author ARRAY(id, lastname, firstname, biography, image)
 */
-
 ?>
 
 <p class="mb-5">
@@ -16,23 +15,12 @@
 
 <h1 class="mb-3 h1"><?php echo $post['title']; ?></h1>
 <p><?php echo $post['content']; ?></p>
-<div class="tag-widget post-tag-container mb-5 mt-5">
-  <div class="tagcloud">
-  <?php foreach($tags as $tag): ?>
-      <a href="#" class="tag-cloud-link"><?php echo $tag['name']; ?></a>
-    <?php endforeach; ?>
-  </div>
-</div>
 
-<div class="about-author d-flex p-4 bg-light">
-  <div class="bio mr-5">
-    <img src="assets/images/<?php echo $author['image']; ?>" alt="Image placeholder" class="img-fluid mb-4">
-  </div>
-  <div class="desc">
-    <h3><?php echo $author['firstname'] . ' ' . $author['lastname']; ?></h3>
-    <p><?php echo $author['biography']; ?></p>
-  </div>
-</div>
+<!-- tag cloud -->
+<?php include '../app/views/tags/indexByPostId.php'; ?>
+
+<!-- author details -->
+<?php include '../app/views/authors/show.php'; ?>
 
 
 <div class="pt-5 mt-5">

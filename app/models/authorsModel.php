@@ -12,11 +12,10 @@ namespace App\Models\AuthorsModel;
  * @param integer $id
  * @return array
  */
-function findOneByPostId(\PDO $conn, int $id) :array {
-  $sql = 'SELECT a.id, a.lastname, a.firstname, a.biography, a.image
-          FROM authors a
-          JOIN posts p ON p.author_id = a.id
-          WHERE p.id = :id;';
+function findOneById(\PDO $conn, int $id) :array {
+  $sql = 'SELECT *
+          FROM authors
+          WHERE id = :id;';
   
   $rs = $conn->prepare($sql);
   $rs->bindValue(':id', $id, \PDO::PARAM_INT);
