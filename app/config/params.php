@@ -14,3 +14,4 @@ define('DATE_FORMAT', 'd-m-Y');
 
 // Dynamic zone initialization
 $content = '';
+$title = '';
