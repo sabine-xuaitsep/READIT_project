@@ -36,9 +36,6 @@ function showAction (\PDO $conn, int $id) {
   // asking one post by id to postsModel
   include_once '../app/models/postsModel.php';
   $post = PostsModel\findOneById($conn, $id);
-  // asking tags by post id to tagsModel
-  include_once '../app/models/tagsModel.php';
-  $tags = \App\Models\TagsModel\findAllByPostId($conn, $id);
   // asking author by post id to authorsModel
   include_once '../app/models/authorsModel.php';
   $author = \App\Models\AuthorsModel\findOneById($conn, $post['author_id']);

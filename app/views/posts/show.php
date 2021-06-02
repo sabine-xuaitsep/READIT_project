@@ -17,7 +17,10 @@
 <p><?php echo $post['content']; ?></p>
 
 <!-- tag cloud -->
-<?php include '../app/views/tags/indexByPostId.php'; ?>
+<?php 
+    include_once '../app/controllers/tagsController.php'; 
+    \App\Controllers\tagsController\indexByPostIdAction($conn, $post['id']);
+  ?>
 <!-- END tag cloud -->
 
 <!-- author details -->
