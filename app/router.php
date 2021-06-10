@@ -11,6 +11,17 @@ if (isset($_GET['postID'])):
   include_once '../app/controllers/postsController.php';
   \App\Controllers\PostsController\showAction($conn, $_GET['postID']);
 
+elseif (isset($_GET['contact'])):
+  // ROUTE DU CONTACT
+  // PATTERN: /?contact
+  // CTRL: /
+  // ACTION: /
+  GLOBAL $content, $title;
+  $title = "Contact";
+  ob_start();
+    include '../app/views/templates/partials/_contact.php';
+  $content = ob_get_clean();
+
 else:
   // ROUTE PAR DEFAUT : LISTE DES  DERNIERS POSTS
   // PATTERN: /
