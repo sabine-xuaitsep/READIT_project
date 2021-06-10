@@ -13,16 +13,17 @@
         </div>
       </form>
     </div>
-    <div class="sidebar-box ftco-animate">
-      <div class="categories">
-        <h3>Categories</h3>
-        <li><a href="#">Illustration <span class="ion-ios-arrow-forward"></span></a></li>
-        <li><a href="#">Branding <span class="ion-ios-arrow-forward"></span></a></li>
-        <li><a href="#">Application <span class="ion-ios-arrow-forward"></span></a></li>
-        <li><a href="#">Design <span class="ion-ios-arrow-forward"></span></a></li>
-        <li><a href="#">Marketing <span class="ion-ios-arrow-forward"></span></a></li>
-      </div>
-    </div>
+
+    <!-- CATEGORIES -->
+    <?php 
+      // asking categories to categoriesModel
+      include_once '../app/models/categoriesModel.php';
+      $categories = \App\Models\CategoriesModel\findAll($conn);
+
+      // load categories/index directly
+      include '../app/views/categories/_index.php';
+    ?>
+    <!-- END CATEGORIES -->
 
     <div class="sidebar-box ftco-animate">
       <h3>Recent Blog</h3>
@@ -61,7 +62,8 @@
       </div>
     </div>
 
-    <div class="sidebar-box ftco-animate">
+    <!-- TAG -->
+    <!-- <div class="sidebar-box ftco-animate">
       <h3>Tag Cloud</h3>
       <div class="tagcloud">
         <a href="#" class="tag-cloud-link">cat</a>
@@ -73,6 +75,7 @@
         <a href="#" class="tag-cloud-link">desserts</a>
         <a href="#" class="tag-cloud-link">drinks</a>
       </div>
-    </div>
+    </div> -->
+    <!-- END TAG -->
 
   </div>

@@ -19,5 +19,5 @@ function indexByPostIdAction (\PDO $conn, int $id) {
   $tags = TagsModel\findAllByPostId($conn, $id);
 
   // load comments/indexByPostId directly
-  include '../app/views/tags/indexByPostId.php';
+  include '../app/views/tags/_indexByPostId.php';
 }
