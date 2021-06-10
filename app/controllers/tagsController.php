@@ -6,6 +6,23 @@
 namespace App\Controllers\TagsController;
 use \App\Models\TagsModel;
 
+
+/**
+ * indexAction
+ *
+ * @param \PDO $conn
+ * @return void
+ */
+function indexAction (\PDO $conn) {
+  // asking tags to tagsModel
+  include_once '../app/models/tagsModel.php';
+  $tags = TagsModel\findAll($conn);
+  
+  // load tags/_index directly
+  include '../app/views/tags/_index.php';
+}
+
+
 /**
  * indexByPostIdAction
  *

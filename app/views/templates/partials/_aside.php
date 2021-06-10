@@ -63,6 +63,10 @@
     </div>
 
     <!-- TAG -->
+    <?php 
+      include_once '../app/controllers/tagsController.php';
+      \App\Controllers\TagsController\indexAction($conn);
+    ?>
     <!-- <div class="sidebar-box ftco-animate">
       <h3>Tag Cloud</h3>
       <div class="tagcloud">

@@ -19,5 +19,11 @@ function indexByPostIdAction (\PDO $conn, int $id) {
   $comments = CommentsModel\findAllByPostId($conn, $id);
 
   // load comments/indexByPostId directly
-  include '../app/views/comments/indexByPostId.php';
+  include '../app/views/comments/_indexByPostId.php';
 }
+
+
+
+// function storeAction (\PDO $conn, array $comment) {
+
+// }
