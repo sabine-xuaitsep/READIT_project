@@ -41,3 +41,22 @@ function findOneById(\PDO $conn, int $id) :array {
   $rs->execute();
   return $rs->fetch(\PDO::FETCH_ASSOC);
 }
+
+/**
+ * All posts by category ID
+ *
+ * @param \PDO $conn
+ * @param integer $id
+ * @return array
+ */
+function findAllByCatId(\PDO $conn, int $id) :array {
+  $sql = 'SELECT * 
+          FROM posts
+          WHERE category_id = :id
+          ORDER BY created_at DESC;';
+
+  $rs = $conn->prepare($sql);
+  $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+  $rs->execute();
+  return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}

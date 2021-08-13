@@ -27,11 +27,20 @@ elseif (isset($_GET['contact'])):
 elseif (isset($_POST['comments']) === "add"):
   // ROUTE DE L'AJOUT D'UN COMMENTAIRE
   // PATTERN: ?comments=add
-  // CTRL: commentsControleur.php
+  // CTRL: commentsController
   // ACTION: store
   include_once '../app/controllers/commentsController.php';
   \App\Controllers\CommentsController\storeAction($conn, $_POST['comments']);
 
+
+elseif (isset($_GET['catID'])):
+  // ROUTE DES POSTS PAR CATEGORIE
+  // PATTERN: /?catID=x
+  // CTRL: categoriesController
+  // ACTION: show
+  include_once '../app/controllers/categoriesController.php';
+  \App\Controllers\CategoriesController\showAction($conn, $_GET['catID']);
+  
 
 else:
   // ROUTE PAR DEFAUT : LISTE DES  DERNIERS POSTS
