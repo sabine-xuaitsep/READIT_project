@@ -1,6 +1,6 @@
 <?php 
 /*
-  ./app/views/tags/indexByPostId.php 
+  ./app/views/tags/_indexByPostId.php 
 
   Available VARIABLES:
     - $tags ARRAY(ARRAY(id, name))

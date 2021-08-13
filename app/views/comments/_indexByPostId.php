@@ -1,6 +1,6 @@
 <?php 
 /*
-  ./app/views/comments/indexByPostId.php 
+  ./app/views/comments/_indexByPostId.php 
 
   Available VARIABLES:
     - $comments ARRAY(ARRAY(pseudo, content, created_at, post_id))

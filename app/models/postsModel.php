@@ -5,6 +5,7 @@
 
 namespace App\Models\PostsModel;
 
+
 /**
  * Last $limit posts
  *
@@ -24,6 +25,7 @@ function findAll(\PDO $conn, int $limit = 10) :array {
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
 
+
 /**
  * One post by ID
  *
@@ -42,8 +44,9 @@ function findOneById(\PDO $conn, int $id) :array {
   return $rs->fetch(\PDO::FETCH_ASSOC);
 }
 
+
 /**
- * All posts by category ID
+ * Posts by category ID
  *
  * @param \PDO $conn
  * @param integer $id

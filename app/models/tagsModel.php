@@ -6,6 +6,12 @@
 namespace App\Models\TagsModel;
 
 
+/**
+ * All tags
+ *
+ * @param \PDO $conn
+ * @return array
+ */
 function findAll(\PDO $conn) :array {
   $sql = 'SELECT * 
           FROM tags

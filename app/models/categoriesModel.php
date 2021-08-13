@@ -5,6 +5,7 @@
 
 namespace App\Models\CategoriesModel;
 
+
 /**
  * Categories list
  *
@@ -20,8 +21,9 @@ function findAll(\PDO $conn) :array {
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
 
+
 /**
- * Category by ID
+ * Category by id
  *
  * @param \PDO $conn
  * @param integer $id

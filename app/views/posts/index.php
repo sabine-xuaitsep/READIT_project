@@ -1,6 +1,6 @@
 <?php 
 /*
-  ./app/views/posts/show.php 
+  ./app/views/posts/index.php 
 
   Available VARIABLES:
     - $posts: ARRAY(ARRAY(id, title, created_at, resume, image, content, author_id, categorie_id))

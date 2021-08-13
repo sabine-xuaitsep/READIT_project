@@ -7,6 +7,7 @@ namespace App\Controllers\CategoriesController;
 use \App\Models\CategoriesModel;
 use \App\Models\PostsModel;
 
+
 /**
  * showAction
  *

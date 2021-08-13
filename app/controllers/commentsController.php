@@ -6,6 +6,7 @@
 namespace App\Controllers\CommentsController;
 use \App\Models\CommentsModel;
 
+
 /**
  * indexByPostIdAction
  *
@@ -18,7 +19,7 @@ function indexByPostIdAction (\PDO $conn, int $id) {
   include_once '../app/models/commentsModel.php';
   $comments = CommentsModel\findAllByPostId($conn, $id);
 
-  // load comments/indexByPostId directly
+  // load comments/_indexByPostId directly
   include '../app/views/comments/_indexByPostId.php';
 }
 

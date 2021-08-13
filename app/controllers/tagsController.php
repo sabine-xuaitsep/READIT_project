@@ -31,10 +31,10 @@ function indexAction (\PDO $conn) {
  * @return void
  */
 function indexByPostIdAction (\PDO $conn, int $id) {
-  // asking comments by post id to commentsModel
+  // asking tags by post id to tagsModel
   include_once '../app/models/tagsModel.php';
   $tags = TagsModel\findAllByPostId($conn, $id);
 
-  // load comments/indexByPostId directly
+  // load tags/_indexByPostId directly
   include '../app/views/tags/_indexByPostId.php';
 }

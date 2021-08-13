@@ -12,6 +12,15 @@ if (isset($_GET['postID'])):
   \App\Controllers\PostsController\showAction($conn, $_GET['postID']);
 
 
+elseif (isset($_GET['catID'])):
+  // ROUTE DES POSTS PAR CATEGORIE
+  // PATTERN: /?catID=x
+  // CTRL: categoriesController
+  // ACTION: show
+  include_once '../app/controllers/categoriesController.php';
+  \App\Controllers\CategoriesController\showAction($conn, $_GET['catID']);
+
+
 elseif (isset($_GET['contact'])):
   // ROUTE DU CONTACT
   // PATTERN: /?contact
@@ -31,15 +40,6 @@ elseif (isset($_POST['comments']) === "add"):
   // ACTION: store
   include_once '../app/controllers/commentsController.php';
   \App\Controllers\CommentsController\storeAction($conn, $_POST['comments']);
-
-
-elseif (isset($_GET['catID'])):
-  // ROUTE DES POSTS PAR CATEGORIE
-  // PATTERN: /?catID=x
-  // CTRL: categoriesController
-  // ACTION: show
-  include_once '../app/controllers/categoriesController.php';
-  \App\Controllers\CategoriesController\showAction($conn, $_GET['catID']);
   
 
 else:
