@@ -21,6 +21,15 @@ elseif (isset($_GET['catID'])):
   \App\Controllers\CategoriesController\showAction($conn, $_GET['catID']);
 
 
+  elseif (isset($_GET['tagID'])):
+    // ROUTE DES POSTS PAR TAG
+    // PATTERN: /?tagID=x
+    // CTRL: tagsController
+    // ACTION: show
+    include_once '../app/controllers/tagsController.php';
+    \App\Controllers\TagsController\showAction($conn, $_GET['tagID']);
+
+
 elseif (isset($_GET['contact'])):
   // ROUTE DU CONTACT
   // PATTERN: /?contact

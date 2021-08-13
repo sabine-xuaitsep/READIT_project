@@ -11,7 +11,7 @@
   <h3>Tag Cloud</h3>
   <div class="tagcloud">
     <?php foreach($tags as $tag): ?>
-      <a href="#" class="tag-cloud-link"><?php echo $tag['name']; ?></a>
+      <a href="?tagID=<?php echo $tag['id']; ?>" class="tag-cloud-link"><?php echo $tag['name']; ?></a>
     <?php endforeach; ?>
   </div>
 </div>

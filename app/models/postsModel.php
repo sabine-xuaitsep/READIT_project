@@ -46,7 +46,7 @@ function findOneById(\PDO $conn, int $id) :array {
 
 
 /**
- * Posts by category ID
+ * Posts by category id
  *
  * @param \PDO $conn
  * @param integer $id
@@ -56,6 +56,27 @@ function findAllByCatId(\PDO $conn, int $id) :array {
   $sql = 'SELECT * 
           FROM posts
           WHERE category_id = :id
+          ORDER BY created_at DESC;';
+
+  $rs = $conn->prepare($sql);
+  $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+  $rs->execute();
+  return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+
+/**
+ * Posts by tag id
+ *
+ * @param \PDO $conn
+ * @param integer $id
+ * @return array
+ */
+function findAllByTagId(\PDO $conn, int $id) :array {
+  $sql = 'SELECT * 
+          FROM posts p
+          JOIN posts_has_tags pht ON pht.post_id = p.id
+          WHERE pht.tag_id = :id
           ORDER BY created_at DESC;';
 
   $rs = $conn->prepare($sql);
